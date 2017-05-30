@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice 1 en jQuery !</title>
+</head>
+<body>
+    <form action="traitement.php" id="MonFormulaire">
+        <input type="text" required placeholder="Nom et Prénom" id="nomcomplet">
+        <input type="submit" value="Je Valide">
+    </form>
+     <!-- CONSIGNE : Avec l'aide de jQuery, vous devrez :
+    
+        1. A la soumission du formulaire, cacher le formulaire puis :
+        2. Créer un élément <p>
+        3. Dans cet élément, afficher : Bonjour <nomcomplet> correspondant 
+           au nom saisie dans le formulaire.
+
+    Intégration de la librairie jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <script>
+        $('#MonFormulaire').on('submit', function(event) {
+            // -- Cette fonction anonyme sera executé a la soumission du formulaire.
+
+            // -- Permet d'annuler l'action par defaut du submit du formulaire.
+            event.preventDefault();
+            
+            // -- On remplace notre formulaire par le paragraphe ci-dessous.
+            $(this).replaceWith('<p>Bonjour ' + $('#nomcomplet').val() +  ' !</p>');
+            // $('<p>').append($('#nomcomplet').val()).appendTo($('body'));
+            //console.log($(this)) Ici, $(this) correspond à form#MonFormulaire
+        });
+    </script>
+</body>
+</html>
