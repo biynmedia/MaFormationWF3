@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Encodage pour les accents -->
+    <meta charset="UTF-8">
+    
+    <!-- Titre de la Page -->
+    <title>Gestion de mes Contacts</title>
+    
+    <!-- Pour Internet Explorer : S'assurer qu'il utilise la dernière version du moteur de rendu -->    
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    
+    <!-- Affichage sans zoom pour les mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Styles CSS -->
+    <style>
+        main {
+            margin-bottom: 500px;
+        }
+        .contact {
+            background: #EEE;
+            text-align: center;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        .contact h1 {
+            margin: 0;	
+        }
+
+        .alert-contact {
+            display: none;
+        }
+    </style>
+    
+    <!-- HTML5 Shiv -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js" integrity="sha256-sqQlcOZwgKkBRRn5WvShSsuopOdq9c3U+StqgPiFhHQ=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    
+    <main class="container">
+        
+        <!-- En-Tête de Présentation -->
+        <header class="row">
+            <div class="contact col-xs-12">
+                <h1>Gestion de mes Contacts</h1>
+            </div>
+        </header>
+        
+        <section class="row">
+            
+            <!-- Début du Formulaire -->
+            <div class="col-xs-12">
+                <form id="contact" action="traitement.php" class="form-horizontal">
+                    <fieldset>
+                        
+                        <!-- Nom du Formulaire -->
+                        <legend>Ajouter un Contact</legend>
+                        
+                        <!-- Nom -->
+                        <div class="form-group">
+                            <label for="nom" class="col-md-4 control-label">Nom</label>
+                            <div class="col-md-8">
+                                <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom">
+                            </div>
+                        </div>
+                        
+                        <!-- Prénom -->
+                        <div class="form-group">
+                            <label for="prenom" class="col-md-4 control-label">Prénom</label>
+                            <div class="col-md-8">
+                                <input type="text" name="prenom" id="prenom" class="form-control" placeholder="Prénom">
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">Email</label>
+                            <div class="col-md-8">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        
+                        <!-- Téléphone -->
+                        <div class="form-group">
+                            <label for="tel" class="col-md-4 control-label">Tel</label>
+                            <div class="col-md-8">
+                                <input type="tel" name="tel" id="tel" class="form-control" placeholder="Téléphone">
+                            </div>
+                        </div>
+                        
+                        <!-- Bouton d'Envoi -->
+                        <div class="form-group">
+                            <div class="col-xs-9 col-xs-offset-3">
+                                <button type="submit" class="btn btn-primary" value="Ajouter le Contact">Ajouter le Contact</button>
+                            </div>
+                        </div>
+                        
+                    </fieldset>
+                </form>
+            </div>
+            <!-- Fin du Formulaire -->
+        </section>
+        
+    </main>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <!-- contact.custom.js -->
+    <script src="assets/js/07.validationform.js"></script>
+    
+</body>
+</html>
