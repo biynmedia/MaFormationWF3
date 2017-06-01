@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice 4</title>
+</head>
+<body>
+    <form id="MonFormulaire" method="post" action="connexion.php">
+        <input type="text" name="email" placeholder="Email"><br><br>
+        <input type="text" name="mdp" placeholder="Mot de Passe"><br><br>       
+        <input type="submit" id="submit" value="Connexion">
+    </form>
+
+    <!-- CONSIGNE : Avec l'aide de jQuery, vous devrez :
+    
+        1. A l'aide d'une API de Géolocalisation, vous affichez dans un paragraphe du formulaire l'adresse IP ainsi que la Ville et/ou Code Postal de l'utilisateur connecté.
+        
+        // -- Utilisation de JSONP : geoip.nekudo.com || ip-api.com
+     
+    -->
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+    <script>
+        // -- DOM is READY !
+        $(function() {
+            // -- 1. Une requète Ajax Simple
+            $.ajax('http://geoip.nekudo.com/api/').done(function(resultat) {
+                console.log(resultat);
+            }); 
+
+            // -- 2. avec getJSON et JSONP (Callback)
+            $.getJSON('http://ip-api.com/json/?callback=', function(resultat) {
+                console.log(resultat);
+
+                // -- Affichage sur ma page
+                $('<p>').text("Votre IP est surveillée : " + resultat.query + " " + resultat.isp).css({'background':'yellow','color':'red'}).appendTo($('form'));
+            });
+        });
+    </script>
+
+
+</body>
+</html>
