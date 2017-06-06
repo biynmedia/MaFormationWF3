@@ -36,33 +36,31 @@
     <!-- --------------------------------------------------------------
                      Menu du Haut : Navigation Bootstrap
     ---------------------------------------------------------------- -->
-    
+
     <nav class="navbar navbar-inverse navbar-apple">
         <div class="container">
-            <!-- En-Tete du Menu : Contient le Menu Mobile et le Logo -->
+          
+           <!-- En-Tete du Menu : Contient le Menu Mobile et Le Logo -->
             <div class="navbar-header">
-
+                
                 <!-- Gestion du Menu Burger : Version Mobile -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- Emplacement Logo / Nom du Site dans Bootstrap -->
                 
-
-            </div> <!-- /.navbar-header -->
-
-            <!-- Le Menu -->
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a class="logoApple" href="#">
+                <!-- Le Logo Apple -->
+                <a class="navbar-brand" href="#">
                     <i class="fa fa-apple" aria-hidden="true"></i>
                 </a>
-                    </li>
+                
+            </div> <!-- /.navbar-header -->
+            
+            <!-- Le Menu -->
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
                     <li><a href="#">Mac</a></li>
                     <li><a href="#">iPad</a></li>
                     <li class="active"><a href="#">iPhone</a></li>
@@ -71,10 +69,11 @@
                     <li><a href="#">Music</a></li>
                     <li><a href="#">Assistance</a></li>
                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
+            </div>
+            
+        </div>
     </nav>
 
     <main>
@@ -140,6 +139,73 @@
                 </div>
             </div>
         </section>
+
+        <!-- --------------------------------------------------------------
+                                Section : Contact
+        ---------------------------------------------------------------- -->
+
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <h3>Contact</h3>
+                    <div class="col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
+                        <form action="contact.php" id="contact-form"
+                            class="form-horizontal">
+                        
+                            <!-- Nom et Prénom -->
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="Saisissez votre Nom et Prénom" required>
+                                </div>
+                            </div>
+
+                            <!-- Email et Téléphone -->
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control"
+                                        placeholder="Saisissez votre Email" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="tel" class="form-control"
+                                        placeholder="Saisissez votre Telephone" required>
+                                </div>
+                            </div>
+
+                            <!-- Sujet -->
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control"
+                                        placeholder="Saisissez votre Sujet" required>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <textarea id="message" rows="5" class="form-control"
+                                        placeholder="Message..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Bouton d'Envoi -->
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                   <button type="submit" class="btn btn-primary"
+                                    value="Envoyer ma Demande">Envoyer ma Demande</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <!-- Pied de Page -->
+    <footer>
+        <p>Une Réalisation Paris IV</p>
+    </footer>
 
     </main>
 
