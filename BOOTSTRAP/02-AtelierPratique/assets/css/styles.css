@@ -1,5 +1,5 @@
 body {
-    /*background: #000;*/
+    background: #000;
 }
 
 
@@ -26,8 +26,23 @@ body {
     font-weight: 400;
 }
 
-.navbar-brand {
+.logoApple {
     color: #FFF !important;
+}
+
+/* 
+Centrer navbar bootstrap :
+https://stackoverflow.com/questions/18777235/center-content-in-responsive-bootstrap-navbar
+*/
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
 }
 
 /* ---------------------
@@ -39,8 +54,60 @@ body {
 }
 
 #mobile ul {
-
+    padding: 10px 0;
 }
 #mobile ul li {
+    padding: 0 15px;
+}
 
+/* ---------------------
+    SECTION PROJECTEUR
+------------------------ */
+
+#projecteur {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#projecteur h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    color:white;
+    font-size: 50px;
+}
+
+#projecteur h3 {
+    color:white;
+    font-size: 60px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+
+#projecteur p {
+    color: #CCC;
+}
+
+/* ---------------------
+    SECTION iPhone7
+------------------------ */
+
+#iPhone7 {
+    background-image: linear-gradient(#FFF 0%, #EEE 100%);
+    padding: 40px 0 0 0;
+}
+
+#iPhone7 article {
+    text-align: center;
+}
+
+#iPhone7 article h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+    color: #303236;
+    margin: 40px 0;
+}
+
+#iPhone7 article p {
+    margin: 40px 0;
 }
