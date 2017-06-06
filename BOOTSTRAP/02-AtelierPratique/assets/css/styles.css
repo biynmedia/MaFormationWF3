@@ -1,0 +1,46 @@
+body {
+    /*background: #000;*/
+}
+
+
+/* ---------------------
+      NAV BAR APPLE
+------------------------ */
+
+.navbar-apple {
+    background-color: #1E1E1E;
+    border-radius: 0;
+    margin-bottom:0;
+}
+
+.navbar-apple ul {
+    text-align: center; 
+}
+
+.navbar-apple ul li {
+    margin: 0 10px;
+}
+
+.navbar-apple ul li a {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+}
+
+.navbar-brand {
+    color: #FFF !important;
+}
+
+/* ---------------------
+      SECTION MOBILE
+------------------------ */
+
+#mobile {
+    background: #141414;
+}
+
+#mobile ul {
+
+}
+#mobile ul li {
+
+}
