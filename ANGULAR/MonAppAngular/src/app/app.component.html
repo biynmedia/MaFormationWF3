@@ -1,20 +1,62 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/docs/ts/latest/tutorial/">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+<header>
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+        <a href="/" class="navbar-brand">Mes Contacts</a> 
+    </div>
+  </nav>
+</header>
 
+<div class="row">
+  <div class="col-sm-4">
+
+  <!-- *ngIf : Permet de faire le rendu HTML de la div, que si le tableau contacts contient des objets -->
+
+    <div *ngIf="contacts">
+
+        <ul class="list-group list-contacts">
+          <li class="list-group-item" 
+            *ngFor="let contact of contacts"
+            (click)="choisirUnContact(contact)"
+            [class.active]="contact === contactActif">
+              {{contact.fullname}}
+          </li>
+        </ul>
+
+    </div> <!-- ./ IFcontacts -->
+
+  </div> <!-- ./ col-sm-4 -->
+
+  <div class="col-sm-8">
+
+    <div class="jumbotron"
+      *ngIf="contactActif">
+
+      <!-- Avec l'expression {{ }} j'affiche le contenu de la variable dans l'application -->
+
+      <h2>
+        {{contactActif.fullname}}
+        <small>{{contactActif.username}}</small>
+      </h2>
+
+      <input class="form-control"
+        [(ngModel)]="contactActif.fullname">
+
+    </div> <!-- ./ jumbotron -->
+
+    <div class="jumbotron"
+      *ngIf="!contactActif">
+
+      <span class="glyphicon glyphicon-hand-left"></span>
+      <h2>Bienvenue, choisis un contact</h2>
+
+    </div> <!-- ./ jumbotron -->
+
+  </div> <!-- ./ col-sm-8 -->
+
+</div> <!-- ./ row -->
+
+<!-- <p>Bonjour {{Contact.fullname}} <i>({{Contact.username}})</i></p> -->
+
+<footer class="text-center">
+  Copyright &copy; 2017
+</footer>
