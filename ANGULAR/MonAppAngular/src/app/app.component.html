@@ -28,20 +28,8 @@
 
   <div class="col-sm-8">
 
-    <div class="jumbotron"
-      *ngIf="contactActif">
-
-      <!-- Avec l'expression {{ }} j'affiche le contenu de la variable dans l'application -->
-
-      <h2>
-        {{contactActif.fullname}}
-        <small>{{contactActif.username}}</small>
-      </h2>
-
-      <input class="form-control"
-        [(ngModel)]="contactActif.fullname">
-
-    </div> <!-- ./ jumbotron -->
+    <!-- Appel de notre Composant app-profil-contact -->
+    <app-profil-contact [contact]="contactActif" ></app-profil-contact>
 
     <div class="jumbotron"
       *ngIf="!contactActif">
