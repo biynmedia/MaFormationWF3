@@ -26,7 +26,9 @@ import { Component } from '@angular/core';
 
             <ul class="list-group list-contacts">
               <li class="list-group-item" 
-                *ngFor="let contact of contacts">
+                *ngFor="let contact of contacts"
+                (click)="choisirUnContact(contact)"
+                [class.active]="contact === contactActif">
                   {{contact.fullname}}
               </li>
             </ul>
@@ -37,13 +39,26 @@ import { Component } from '@angular/core';
 
       <div class="col-sm-8">
 
-        <div class="jumbotron">
+        <div class="jumbotron"
+          *ngIf="contactActif">
 
           <!-- Avec l'expression {{ }} j'affiche le contenu de la variable dans l'application -->
 
-          <h3>Gestion de mes {{title}} !</h3>
+          <h2>
+            {{contactActif.fullname}}
+            <small>{{contactActif.username}}</small>
+          </h2>
 
         </div> <!-- ./ jumbotron -->
+
+        <div class="jumbotron"
+          *ngIf="!contactActif">
+
+          <span class="glyphicon glyphicon-hand-left"></span>
+          <h2>Bienvenue, choisis un contact</h2>
+
+        </div> <!-- ./ jumbotron -->
+
       </div> <!-- ./ col-sm-8 -->
 
     </div> <!-- ./ row -->
@@ -57,6 +72,12 @@ import { Component } from '@angular/core';
 
   // -- 2.c : Les Styles CSS
   styles: [` 
+      .list-contacts li {
+        cursor:pointer;
+      }
+      .jumbotron .glyphicon {
+        font-size : 80px;
+      }
   `]
 })
 
@@ -78,5 +99,14 @@ export class AppComponent {
     { id:2, fullname:'Tanguy MANAS', username:'tanguymanas'},
     { id:3, fullname:'Yimin JI', username:'yiminji'}
   ]
+
+  // -- Choix de mon utilisateur actif
+  contactActif;
+
+  // -- Ma fonction choisir contact, prend un contact en paramètre, et le transmet a la variable contactActif
+  choisirUnContact(contact) {
+    this.contactActif = contact;
+    console.log(this.contactActif);
+  }
 
 }
