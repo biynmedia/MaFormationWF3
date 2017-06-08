@@ -44,4 +44,16 @@ export class AppComponent {
     console.log(this.contactActif);
   }
 
+  // -- Si unContactEstCree j'apelle ma fonction ajouterContactDansListe
+  ajouterContactDansListe(event) {
+    // Aperçu dans la console
+    console.log(event);
+
+    // -- Insertion du Contact dans le tableau de contacts
+    this.contacts.push(event.contact);
+
+    // -- Insertion dans le localstorage, BDD, ...
+
+  }
+
 }
