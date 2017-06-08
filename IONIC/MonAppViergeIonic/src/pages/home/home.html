@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Dernières Informations
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card *ngFor="let article of mesArticles">
+
+      <ion-item>
+        <h2>{{article.title}}</h2>
+        <p>{{article.created}}</p>
+      </ion-item>
+
+      <img src="{{article.images.image_intro}}">
+
+      <ion-card-content>
+          <article [innerHTML]="article.introtext"></article>
+      </ion-card-content>
+
+    <ion-row>
+      <ion-col center text-center>
+        <ion-note>
+          {{article.created_by.name}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+  <small><p>{{monIP}}</p></small>
+
+</ion-content>
